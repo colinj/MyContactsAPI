@@ -24,9 +24,7 @@ namespace MyContacts.Controllers
 
         public Contact Get(int id)
         {
-            var contact = contactService.GetAll()
-                                        .Where(c => c.Id == id)
-                                        .SingleOrDefault();
+            var contact = contactService.GetById(id);
 
             if (contact == null)
             {

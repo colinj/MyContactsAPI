@@ -12,6 +12,11 @@ namespace MyContacts.Models
             return this.GetFakeContacts();
         }
 
+        public Contact GetById(int id)
+        {
+            return GetFakeContacts().SingleOrDefault(contact => contact.Id == id);
+        }
+
         private List<Contact> GetFakeContacts()
         {
             return new List<Contact>
