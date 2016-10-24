@@ -10,6 +10,9 @@ namespace MyContacts
     {
         public static void Register(HttpConfiguration config)
         {
+            // Remove XML formatter
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
+
             // Web API configuration and services
             config.MessageHandlers.Add(new LoggingHandler());
 
